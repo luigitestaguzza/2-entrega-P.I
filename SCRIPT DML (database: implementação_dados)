@@ -1,0 +1,126 @@
+-- Adicionando novos usuários na tabela “usuario”:
+
+INSERT INTO usuario(registroUniversidade_usuario, nomeUsuario, dataNascimento, CPF_usuario, email, telefone, logradouro, numeroLogradouro, complementoLogradouro, CEP_logradouro)
+VALUES ( '1001', 'Maria Silva', '1984-01-01', '12345677890', 'mariasilva@gmail.com', '11912345678', 'Avenida Paulista', '1000', ' ', '05544332');
+
+INSERT INTO usuario(registroUniversidade_usuario, nomeUsuario, dataNascimento, CPF_usuario, email, telefone, logradouro, numeroLogradouro, complementoLogradouro, CEP_logradouro)
+VALUES ( '1567', 'José Santos', '1999-10-01', '98744556112', 'jsantos@hotmail.com', '11987456123', 'Rua Cristal', '77', ' ', '06775201');
+
+INSERT INTO usuario(registroUniversidade_usuario, nomeUsuario, dataNascimento, CPF_usuario, email, telefone, logradouro, numeroLogradouro, complementoLogradouro, CEP_logradouro)
+VALUES ( '6578', 'Giovanna Soares Pereira', '1993-02-16', '08745321568', 'soares@outlook.com', '11932647895', 'Rua Lopes Magalhães', '106', 'Apto 5', '32215745');
+
+INSERT INTO usuario(registroUniversidade_usuario, nomeUsuario, dataNascimento, CPF_usuario, email, telefone, logradouro, numeroLogradouro, complementoLogradouro, CEP_logradouro)
+VALUES ( '5631', 'Bruno Lucca Oliveira', '2001-07-19', '53267421569', 'bruno2001@outlook.com', '11956931212', 'Avenida Santanna', '05', 'Apto 10B', '05336010');
+
+INSERT INTO usuario(registroUniversidade_usuario, nomeUsuario, dataNascimento, CPF_usuario, email, telefone, logradouro, numeroLogradouro, complementoLogradouro, CEP_logradouro)
+VALUES ( '6257', 'Thomas Souza', '2000-08-06', '60326574132', 'thomas.souza@yahoo.com.br', '11965223698', 'Rua Falcão', '1936', '', '32116020');
+
+-- Adicionando novos livros na tabela “livro”:
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Os Miseráveis', 'Victor Hugo', 'Romance', 'A001');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Dom Quixote', 'Miguel de Cervantes', 'Ficção', 'D012');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('1984', 'George Orwell', 'Ficção Distópica', 'D030');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Cálculo I', 'James Stewart', 'Ciências Exatas', 'E015');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Introdução à Economia', 'Gregory Mankiw', 'Ciências Sociais', 'G002');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Princípios de Química', 'Peter Atkins', 'Ciências Exatas', 'E010');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Anatomia Humana', 'Elaine Marieb', 'Ciências da Saúde', 'H020');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Introduction to Algorithms', 'Thomas H. Cormen', 'Ciências da Computação', 'V155');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Princípios da Genética', 'Peter Snustad', 'Biologia', 'H135');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Orgulho e Preconceito', 'Jane Austen', 'Romance', 'A002');
+
+INSERT INTO livro(titulo, nomeAutor, generoLivro, localizacaoPrateleira)
+VALUES ('Física II', 'David Halliday', 'Ciências Exatas', 'E002');
+
+-- Adicionando os livros em manutenção na tabela “manutencaoacervo”:
+
+INSERT INTO manutencaoacervo(dataManutencao, descricao, ID_livro)
+VALUES ('2024-01-28', 'Reparos físicos', '2' );
+
+INSERT INTO manutencaoacervo(dataManutencao, descricao, ID_livro)
+VALUES ('2024-02-15', 'Limpeza', '5' );
+
+INSERT INTO manutencaoacervo(dataManutencao, descricao, ID_livro)
+VALUES ('2024-02-20', 'Digitalização', '1' );
+
+-- Adicionando os empréstimos realizados na tabela “emprestimo”:
+
+INSERT INTO emprestimo(data_inicio_emprestimo, data_prevista_devolucao, data_real_devolucao, ID_usuario, ID_livro)
+VALUES ('2024-03-01', '2024-03-15', 'Pendente', '1', '7' );
+
+INSERT INTO emprestimo(data_inicio_emprestimo, data_prevista_devolucao, data_real_devolucao, ID_usuario, ID_livro)
+VALUES ('2024-03-03', '2024-03-18', 'Pendente', '3', '8' );
+
+INSERT INTO emprestimo(data_inicio_emprestimo, data_prevista_devolucao, data_real_devolucao, ID_usuario, ID_livro)
+VALUES ('2024-02-25', '2024-03-06', '2024-03-06', '4', '3' );
+
+INSERT INTO emprestimo(data_inicio_emprestimo, data_prevista_devolucao, data_real_devolucao, ID_usuario, ID_livro)
+VALUES ('2024-02-23', '2024-03-05', 'Pendente', '5', '4' );
+
+-- Adicionando a multa na tabela “multa”:
+
+INSERT INTO multa(valor, data_aplicacao, ID_emprestimo)
+VALUES ('20.00', '2024-03-05', '4');
+
+-- Adicionando os funcionários na tabela “funcionario”:
+INSERT INTO funcionario(nomeFuncionario, cargo, permissao, loginNome, senhaLogin)
+VALUES ('Flávia Moreira Lopes', 'Recepção', 'CREATE, ALTER', 'f.lopes', '***********');
+
+INSERT INTO funcionario(nomeFuncionario, cargo, permissao, loginNome, senhaLogin)
+VALUES ('Rogério Clóvis Mauro', 'Limpeza', 'Vizualizar', 'r.mauro', '***********');
+
+INSERT INTO funcionario(nomeFuncionario, cargo, permissao, loginNome, senhaLogin)
+VALUES ('Paula Alves Souza', 'Supervisão', 'CREATE, ALTER, DELETE', 'p.souza', '***********');
+
+INSERT INTO funcionario(nomeFuncionario, cargo, permissao, loginNome, senhaLogin)
+VALUES ('Romeu Filipe Cabral', 'Recepção', 'CREATE, ALTER', 'r.cabral', '***********');
+
+-- Adicionando o relatório na tabela “relatorio”:
+
+INSERT INTO relatorio(modelo, conteudo, data_relatorio, ID_funcionario)
+VALUES ('Manutenção', 'Os livros com ID_livro 01,02 e 05 estão em processo de manutenção de digitalização, reparos físicos e limpeza respectivamente. ATUALIZADO: 07/03/24', '2024-03-07', '3' );
+
+-- Atualizando a disponibilidade dos livros que estão alugados ou em manutenção na tabela “livro”:
+
+UPDATE livro SET disponibilidade = '0' WHERE ID_livro = '5';
+UPDATE livro SET disponibilidade = '0' WHERE ID_livro = '1';
+UPDATE livro SET disponibilidade = '0' WHERE ID_livro = '7';
+UPDATE livro SET disponibilidade = '0' WHERE ID_livro = '8';
+UPDATE livro SET disponibilidade = '0' WHERE ID_livro = '3';
+UPDATE livro SET disponibilidade = '0' WHERE ID_livro = '4';
+
+-- Comandos executados no vídeo:
+
+Select * from usuario;
+
+INSERT INTO usuario(registroUniversidade_usuario, nomeUsuario, dataNascimento, CPF_usuario, email, telefone, logradouro, numeroLogradouro, complementoLogradouro, CEP_logradouro)
+VALUES ( '1536', 'Rafaella Soares', '1997-07-16', '53971755645', 'rafasoares@gmail.com', '11979458312', 'Avenida 9 de Julho', '565', 'Apto 77A ', '05886020');
+
+Select * from livro;
+UPDATE livro SET disponibilidade = '0' WHERE ID_livro = '6';
+
+Select* from emprestimo;
+INSERT INTO emprestimo(data_inicio_emprestimo, data_prevista_devolucao, data_real_devolucao, ID_usuario, ID_livro)
+VALUES ('2024-03-09', '2024-03-19', 'Pendente', '8', '6' );
+
+Select* from funcionario;
+DELETE from funcionario WHERE ID_funcionario = '4';
+Select* from funcionario;
